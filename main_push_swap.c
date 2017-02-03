@@ -6,7 +6,7 @@
 /*   By: tlenglin <tlenglin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 10:28:46 by tlenglin          #+#    #+#             */
-/*   Updated: 2017/02/02 14:24:54 by tlenglin         ###   ########.fr       */
+/*   Updated: 2017/02/03 19:07:26 by tlenglin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,9 @@ int	ft_launch_algo(int argc, char **argv, int nb, char **result)
 	}
 	else if (nb == 4)
 	{
+		ft_putstr("aaa\n");
 		ft_fat_algo(&stack);
+		ft_putstr("zzz\n");
 	}
 	if (stack.instructions != NULL)
 	{
@@ -115,7 +117,135 @@ int	ft_launch_algo(int argc, char **argv, int nb, char **result)
 	return (0);
 }
 
+int	ft_debug(t_stack *stack)
+{
+	ft_putstr("stack A");
+	ft_putstr("\na_0 ");
+	ft_putnbr(stack->stack_a[0]);
+	ft_putstr("\na_1 ");
+	ft_putnbr(stack->stack_a[1]);
+	ft_putstr("\na_2 ");
+	ft_putnbr(stack->stack_a[2]);
+	ft_putstr("\na_3 ");
+	ft_putnbr(stack->stack_a[3]);
+	ft_putstr("\na_4 ");
+	ft_putnbr(stack->stack_a[4]);
+	ft_putstr("\na_5 ");
+	ft_putnbr(stack->stack_a[5]);
+	ft_putstr("\na_6 ");
+	ft_putnbr(stack->stack_a[6]);
+	ft_putstr("\na_7 ");
+	ft_putnbr(stack->stack_a[7]);
+	ft_putstr("\na_8 ");
+	ft_putnbr(stack->stack_a[8]);
+	ft_putstr("\na_9 ");
+	ft_putnbr(stack->stack_a[9]);
+	ft_putstr("\na_10 ");
+	ft_putnbr(stack->stack_a[10]);
+	ft_putstr("\na_11 ");
+	ft_putnbr(stack->stack_a[11]);
+	ft_putstr("\na_12 ");
+	ft_putnbr(stack->stack_a[12]);
+	ft_putstr("\na_13 ");
+	ft_putnbr(stack->stack_a[13]);
+	ft_putstr("\na_14 ");
+	ft_putnbr(stack->stack_a[14]);
+	ft_putstr("\na_15 ");
+	ft_putnbr(stack->stack_a[15]);
+	ft_putstr("\na_16 ");
+	ft_putnbr(stack->stack_a[16]);
+	ft_putstr("\na_17 ");
+	ft_putnbr(stack->stack_a[17]);
+	ft_putstr("\na_18 ");
+	ft_putnbr(stack->stack_a[18]);
+	ft_putstr("\na_19 ");
+	ft_putnbr(stack->stack_a[19]);
+	ft_putstr("\na_20 ");
+	ft_putnbr(stack->stack_a[20]);
+	ft_putstr("\na_21 ");
+	ft_putnbr(stack->stack_a[21]);
+	ft_putstr("\na_22 ");
+	ft_putnbr(stack->stack_a[22]);
+	ft_putstr("\na_23 ");
+	ft_putnbr(stack->stack_a[23]);
+	ft_putstr("\na_24 ");
+	ft_putnbr(stack->stack_a[24]);
+	ft_putstr("\na_25 ");
+	ft_putnbr(stack->stack_a[25]);
+	ft_putstr("\na_26 ");
+	ft_putnbr(stack->stack_a[26]);
+	ft_putstr("\na_27 ");
+	ft_putnbr(stack->stack_a[27]);
+	ft_putstr("\na_28 ");
+	ft_putnbr(stack->stack_a[28]);
+	ft_putstr("\na_29 ");
+	ft_putnbr(stack->stack_a[29]);
 
+
+	ft_putstr("\nstack B");
+	ft_putstr("\nb_0 ");
+	ft_putnbr(stack->stack_b[0]);
+	ft_putstr("\nb_1 ");
+	ft_putnbr(stack->stack_b[1]);
+	ft_putstr("\nb_2 ");
+	ft_putnbr(stack->stack_b[2]);
+	ft_putstr("\nb_3 ");
+	ft_putnbr(stack->stack_b[3]);
+	ft_putstr("\nb_4 ");
+	ft_putnbr(stack->stack_b[4]);
+	ft_putstr("\nb_5 ");
+	ft_putnbr(stack->stack_b[5]);
+	ft_putstr("\nb_6 ");
+	ft_putnbr(stack->stack_b[6]);
+	ft_putstr("\nb_7 ");
+	ft_putnbr(stack->stack_b[7]);
+	ft_putstr("\nb_8 ");
+	ft_putnbr(stack->stack_b[8]);
+	ft_putstr("\nb_9 ");
+	ft_putnbr(stack->stack_b[9]);
+	ft_putstr("\nb_10 ");
+	ft_putnbr(stack->stack_b[10]);
+	ft_putstr("\nb_11 ");
+	ft_putnbr(stack->stack_b[11]);
+	ft_putstr("\nb_12 ");
+	ft_putnbr(stack->stack_b[12]);
+	ft_putstr("\nb_13 ");
+	ft_putnbr(stack->stack_b[13]);
+	ft_putstr("\nb_14 ");
+	ft_putnbr(stack->stack_b[14]);
+	ft_putstr("\nb_15 ");
+	ft_putnbr(stack->stack_b[15]);
+	ft_putstr("\nb_16 ");
+	ft_putnbr(stack->stack_b[16]);
+	ft_putstr("\nb_17 ");
+	ft_putnbr(stack->stack_b[17]);
+	ft_putstr("\nb_18 ");
+	ft_putnbr(stack->stack_b[18]);
+	ft_putstr("\nb_19 ");
+	ft_putnbr(stack->stack_b[19]);
+	ft_putstr("\nb_20 ");
+	ft_putnbr(stack->stack_b[20]);
+	ft_putstr("\nb_21 ");
+	ft_putnbr(stack->stack_b[21]);
+	ft_putstr("\nb_22 ");
+	ft_putnbr(stack->stack_b[22]);
+	ft_putstr("\nb_23 ");
+	ft_putnbr(stack->stack_b[23]);
+	ft_putstr("\nb_24 ");
+	ft_putnbr(stack->stack_b[24]);
+	ft_putstr("\nb_25 ");
+	ft_putnbr(stack->stack_b[25]);
+	ft_putstr("\nb_26 ");
+	ft_putnbr(stack->stack_b[26]);
+	ft_putstr("\nb_27 ");
+	ft_putnbr(stack->stack_b[27]);
+	ft_putstr("\nb_28 ");
+	ft_putnbr(stack->stack_b[28]);
+	ft_putstr("\nb_29 ");
+	ft_putnbr(stack->stack_b[29]);
+	ft_putchar('\n');
+	return (0);
+}
 
 
 // int	main(int argc, char **argv)

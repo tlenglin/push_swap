@@ -6,7 +6,7 @@
 /*   By: tlenglin <tlenglin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:53:30 by tlenglin          #+#    #+#             */
-/*   Updated: 2017/02/02 15:11:13 by tlenglin         ###   ########.fr       */
+/*   Updated: 2017/02/03 12:50:59 by tlenglin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,14 @@ int	ft_rr_ss_rrr(t_stack *stack);
 int	ft_rb_ss_rrb(t_stack *stack);
 int	ft_ra_ss_rra(t_stack *stack);
 int	ft_parsing_of_the_real_shit(int *tab, int length_s, int length);
+int	ft_pa_sb_pa_pa(t_stack *stack);
+int	ft_pa_pa_pa(t_stack *stack);
 
+
+
+
+
+int	ft_debug(t_stack *stack);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tlenglin <tlenglin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 12:26:10 by tlenglin          #+#    #+#             */
-/*   Updated: 2017/02/02 15:11:04 by tlenglin         ###   ########.fr       */
+/*   Updated: 2017/02/03 18:35:13 by tlenglin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_parsing_of_the_real_shit(int *tab, int length_s, int length)
 		{
 			return (5);
 		}
-		else if (c > a)
+		else if (c < a)
 		{
 			return (2);
 		}
@@ -59,30 +59,39 @@ int	ft_parse0(int nb, t_stack *stack)
 {
 	if (nb == 0)
 	{
-		return (1);
+		ft_execution_rb(stack);
+		ft_execution_sb(stack);
+		ft_execution_pa(stack);
+		ft_execution_pa(stack);
+		ft_execution_rrb(stack);
+		ft_execution_pa(stack);
 	}
 	else if (nb == 1)
 	{
-		ft_ra_sa_rra(stack);
+		ft_execution_sb(stack);
+		ft_pa_sb_pa_pa(stack);
 	}
 	else if (nb == 2)
 	{
-		ft_execution_sa(stack);
+		ft_pa_sb_pa_pa(stack);
 	}
 	else if (nb == 3)
 	{
-		ft_parse0(1, stack);
-		ft_parse0(2, stack);
+		ft_execution_rb(stack);
+		ft_execution_sb(stack);
+		ft_execution_pa(stack);
+		ft_execution_rrb(stack);
+		ft_execution_pa(stack);
+		ft_execution_pa(stack);
 	}
 	else if (nb == 4)
 	{
-		ft_parse0(2, stack);
-		ft_parse0(1, stack);
+		ft_execution_sb(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 5)
 	{
-		ft_parse0(4, stack);
-		ft_parse0(2, stack);
+		ft_pa_pa_pa(stack);
 	}
 	return (1);
 }
@@ -91,30 +100,39 @@ int	ft_parse1(int nb, t_stack *stack)
 {
 	if (nb == 0)
 	{
-		ft_rb_sb_rrb(stack);
+		ft_execution_rr(stack);
+		ft_execution_ss(stack);
+		ft_execution_rra(stack);
+		ft_execution_pa(stack);
+		ft_execution_pa(stack);
+		ft_execution_rrb(stack);
+		ft_execution_pa(stack);
 	}
 	else if (nb == 1)
 	{
-		ft_rr_ss_rrr(stack);
+		ft_ra_ss_rra(stack);
+		ft_pa_sb_pa_pa(stack);
 	}
 	else if (nb == 2)
 	{
-		ft_rb_ss_rrb(stack);
+		ft_rr_ss_rrr(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 3)
 	{
-		ft_parse1(1, stack);
-		ft_parse0(2, stack);
+		ft_rr_ss_rrr(stack);
+		ft_execution_sb(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 4)
 	{
-		ft_parse0(2, stack);
-		ft_parse1(1, stack);
+		ft_ra_ss_rra(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 5)
 	{
-		ft_parse1(4, stack);
-		ft_parse0(2, stack);
+		ft_ra_sa_rra(stack);
+		ft_pa_pa_pa(stack);
 	}
 	return (1);
 }
@@ -123,30 +141,41 @@ int	ft_parse2(int nb, t_stack *stack)
 {
 	if (nb == 0)
 	{
+		ft_execution_ss(stack);
+		ft_rr_ss_rrr(stack);
 		ft_execution_sb(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 1)
 	{
+		ft_execution_sa(stack);
 		ft_ra_ss_rra(stack);
+		ft_pa_sb_pa_pa(stack);
 	}
 	else if (nb == 2)
 	{
-		ft_execution_ss(stack);
+		ft_execution_sa(stack);
+		ft_rr_ss_rrr(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 3)
 	{
-		ft_parse2(1, stack);
-		ft_parse0(2, stack);
+		ft_execution_sa(stack);
+		ft_rr_ss_rrr(stack);
+		ft_execution_sb(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 4)
 	{
-		ft_parse0(2, stack);
-		ft_parse2(1, stack);
+		ft_execution_sa(stack);
+		ft_ra_ss_rra(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 5)
 	{
-		ft_parse2(4, stack);
-		ft_parse0(2, stack);
+		ft_execution_sa(stack);
+		ft_ra_sa_rra(stack);
+		ft_pa_pa_pa(stack);
 	}
 	return (1);
 }
@@ -155,33 +184,41 @@ int	ft_parse3(int nb, t_stack *stack)
 {
 	if (nb == 0)
 	{
-		ft_parse1(0, stack);
-		ft_parse2(0, stack);
+		ft_execution_rb(stack);
+		ft_execution_ss(stack);
+		ft_execution_pa(stack);
+		ft_execution_pa(stack);
+		ft_execution_rrb(stack);
+		ft_execution_pa(stack);
 	}
 	else if (nb == 1)
 	{
-		ft_parse1(1, stack);
-		ft_parse2(0, stack);
+		ft_execution_ss(stack);
+		ft_pa_sb_pa_pa(stack);
 	}
 	else if (nb == 2)
 	{
-		ft_parse1(2, stack);
-		ft_parse2(0, stack);
+		ft_execution_sa(stack);
+		ft_pa_sb_pa_pa(stack);
 	}
 	else if (nb == 3)
 	{
-		ft_parse1(1, stack);
-		ft_parse2(2, stack);
+		ft_execution_rb(stack);
+		ft_execution_ss(stack);
+		ft_execution_pa(stack);
+		ft_execution_rrb(stack);
+		ft_execution_pa(stack);
+		ft_execution_pa(stack);
 	}
 	else if (nb == 4)
 	{
-		ft_parse1(4, stack);
-		ft_parse2(0, stack);
+		ft_execution_ss(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 5)
 	{
-		ft_parse1(4, stack);
-		ft_parse2(2, stack);
+		ft_execution_sa(stack);
+		ft_pa_pa_pa(stack);
 	}
 	return (1);
 }
@@ -190,33 +227,40 @@ int	ft_parse4(int nb, t_stack *stack)
 {
 	if (nb == 0)
 	{
-		ft_parse2(0, stack);
-		ft_parse1(0, stack);
+		ft_execution_sb(stack);
+		ft_rr_ss_rrr(stack);
+		ft_execution_ss(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 1)
 	{
-		ft_parse2(0, stack);
-		ft_parse1(1, stack);
+		ft_ra_ss_rra(stack);
+		ft_execution_sa(stack);
+		ft_pa_sb_pa_pa(stack);
 	}
 	else if (nb == 2)
 	{
-		ft_parse2(2, stack);
-		ft_parse1(0, stack);
+		ft_rr_ss_rrr(stack);
+		ft_execution_sa(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 3)
 	{
-		ft_parse2(0, stack);
-		ft_parse1(2, stack);
+		ft_rr_ss_rrr(stack);
+		ft_execution_ss(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 4)
 	{
-		ft_parse2(2, stack);
-		ft_parse1(2, stack);
+		ft_ra_ss_rra(stack);
+		ft_execution_ss(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 5)
 	{
-		ft_parse4(4, stack);
-		ft_parse0(2, stack);
+		ft_ra_sa_rra(stack);
+		ft_execution_sa(stack);
+		ft_pa_pa_pa(stack);
 	}
 	return (1);
 }
@@ -225,33 +269,45 @@ int	ft_parse5(int nb, t_stack *stack)
 {
 	if (nb == 0)
 	{
-		ft_parse2(0, stack);
-		ft_parse3(0, stack);
+		ft_execution_ss(stack);
+		ft_rr_ss_rrr(stack);
+		ft_execution_ss(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 1)
 	{
-		ft_parse4(1, stack);
-		ft_parse2(0, stack);
+		ft_execution_sa(stack);
+		ft_ra_ss_rra(stack);
+		ft_execution_sa(stack);
+		ft_pa_sb_pa_pa(stack);
 	}
 	else if (nb == 2)
 	{
-		ft_parse4(2, stack);
-		ft_parse2(0, stack);
+		ft_execution_sa(stack);
+		ft_rr_ss_rrr(stack);
+		ft_execution_sa(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 3)
 	{
-		ft_parse4(1, stack);
-		ft_parse2(2, stack);
+		ft_execution_sa(stack);
+		ft_rr_ss_rrr(stack);
+		ft_execution_ss(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 4)
 	{
-		ft_parse4(4, stack);
-		ft_parse2(0, stack);
+		ft_execution_sa(stack);
+		ft_ra_ss_rra(stack);
+		ft_execution_ss(stack);
+		ft_pa_pa_pa(stack);
 	}
 	else if (nb == 5)
 	{
-		ft_parse4(4, stack);
-		ft_parse2(2, stack);
+		ft_execution_sa(stack);
+		ft_ra_sa_rra(stack);
+		ft_execution_sa(stack);
+		ft_pa_pa_pa(stack);
 	}
 	return (1);
 }

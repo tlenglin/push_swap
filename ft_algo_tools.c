@@ -6,7 +6,7 @@
 /*   By: tlenglin <tlenglin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/28 08:25:58 by tlenglin          #+#    #+#             */
-/*   Updated: 2017/02/02 14:48:12 by tlenglin         ###   ########.fr       */
+/*   Updated: 2017/02/02 18:56:40 by tlenglin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	ft_get_base_cut(int length_s)
 	int i;
 
 	i = 6;
-	while ((i * 2) < length_s)
+	while ((i * 2) <= length_s)
 	{
 		i = i * 2;
 	}
@@ -107,7 +107,7 @@ int	ft_get_value(int *tab, int length_s, int length, int cut)
 	i = length - length_s;
 	while (i < length)
 	{
-		j = i;
+		j = length - length_s;
 		count = 0;
 		while (j < length)
 		{
@@ -115,9 +115,41 @@ int	ft_get_value(int *tab, int length_s, int length, int cut)
 				count++;
 			j++;
 		}
-		tab_bis[count] = tab[i];
+		tab_bis[length_s - 1 - count] = tab[i];
 		i++;
 	}
+	// ft_putstr("\ntab trie");
+	// ft_putstr("\nt_0 ");
+	// ft_putnbr(tab_bis[0]);
+	// ft_putstr("\nt_1 ");
+	// ft_putnbr(tab_bis[1]);
+	// ft_putstr("\nt_2 ");
+	// ft_putnbr(tab_bis[2]);
+	// ft_putstr("\nt_3 ");
+	// ft_putnbr(tab_bis[3]);
+	// ft_putstr("\nt_4 ");
+	// ft_putnbr(tab_bis[4]);
+	// ft_putstr("\nt_5 ");
+	// ft_putnbr(tab_bis[5]);
+	// ft_putstr("\nt_6 ");
+	// ft_putnbr(tab_bis[6]);
+	// ft_putstr("\nt_7 ");
+	// ft_putnbr(tab_bis[7]);
+	// ft_putstr("\nt_8 ");
+	// ft_putnbr(tab_bis[8]);
+	// ft_putstr("\nt_9 ");
+	// ft_putnbr(tab_bis[9]);
+	// ft_putstr("\nt_10 ");
+	// ft_putnbr(tab_bis[10]);
+	// ft_putstr("\nt_11 ");
+	// ft_putnbr(tab_bis[11]);
+	// ft_putstr("\nt_12 ");
+	// ft_putnbr(tab_bis[12]);
+	// ft_putstr("\nt_13 ");
+	// ft_putnbr(tab_bis[13]);
+	// ft_putstr("\ncut - 1 = ");
+	// ft_putnbr(cut - 1);
+	// ft_putchar('\n');
 	return (tab_bis[cut - 1]);
 }
 
@@ -129,9 +161,16 @@ int	ft_get_medium(int *tab, int length_s, int length, int len)
 	int	tab_bis[len];
 
 	i = length - length_s;
+	// ft_putstr("debut de get_medium\n");
+	// ft_putstr("i = ");
+	// ft_putnbr(i);
+	// ft_putchar('\n');
+	// ft_putstr("len = ");
+	// ft_putnbr(len);
+	// ft_putchar('\n');
 	while (i < (length - length_s + len))
 	{
-		j = i;
+		j = length - length_s;
 		count = 0;
 		while (j < (length - length_s + len))
 		{
@@ -139,9 +178,22 @@ int	ft_get_medium(int *tab, int length_s, int length, int len)
 				count++;
 			j++;
 		}
-		tab_bis[count] = tab[i];
+		// ft_putstr("tab[i] = ");
+		// ft_putnbr(tab[i]);
+		// ft_putchar('\n');
+		// ft_putstr("count = ");
+		// ft_putnbr(count);
+		// ft_putchar('\n');
+		// ft_putstr("len - 1 - count = ");
+		// ft_putnbr(len - 1 - count);
+		// ft_putchar('\n');
+		tab_bis[len - 1 - count] = tab[i];
 		i++;
 	}
+	// ft_putstr("tab_bis[len / 2] = ");
+	// ft_putnbr(tab_bis[len / 2]);
+	// ft_putchar('\n');
+	// ft_putstr("fin de get_medium\n");
 	return (tab_bis[len / 2]);
 }
 
