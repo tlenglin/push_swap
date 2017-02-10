@@ -6,11 +6,13 @@
 /*   By: tlenglin <tlenglin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 20:42:09 by tlenglin          #+#    #+#             */
-/*   Updated: 2017/01/31 08:09:28 by tlenglin         ###   ########.fr       */
+/*   Updated: 2017/02/09 14:40:39 by tlenglin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
+#include <unistd.h>
 
 int	ft_check_stack_order(t_stack *stack)
 {
@@ -57,112 +59,28 @@ int	ft_check_duplication(t_stack *stack)
 	return (1);
 }
 
-int	ft_check_arg(char *str)
+int	ft_error(t_stack *stack)
 {
-	int	i;
-
-	i = 0;
-	if (str[i] == '-')
-		i++;
-	if (!str[i])
-	{
-		return (0);
-	}
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	write(2, "Error\n", 6);
+	free(stack->stack_a);
+	stack->stack_a = NULL;
+	free(stack->stack_b);
+	stack->stack_b = NULL;
+	return (0);
 }
 
-int	ft_read_arg_bis(char *str, t_stack *stack)
+int	ft_init_struct(int argc, t_stack *stack)
 {
-	char	**split;
-	int		i;
-
-	split = NULL;
-	i = 0;
-	split = ft_strsplit(str, ' ');
-	while (split[i])
-		i++;
-	if (!(stack->stack_a = ft_memalloc(sizeof(int) * (i ))))
+	if (!(stack->stack_a = ft_memalloc(sizeof(int) * (argc - 1) + 8)))
 		return (0);
-	if (!(stack->stack_b = ft_memalloc(sizeof(int) * (i ))))
-		return (0);
-	stack->length = i;
-	stack->length_a = i;
-	stack->length_b = 0;
-	stack->instructions = NULL;
-	i = 0;
-	while (split[i])
+	if (!(stack->stack_b = ft_memalloc(sizeof(int) * (argc - 1) + 8)))
 	{
-		if (ft_check_arg(split[i]) == 0)
-			return (0);
-		stack->stack_a[i] = ft_atoi(split[i]);
-		i++;
-	}
-	return (1);
-	// while (str[i])
-	// {
-	// 	while (str[i] && str[i] == ' ')
-	// 	{
-	// 		i++;
-	// 	}
-	// 	if (str[i] && str[i] != ' ')
-	// 	{
-	// 		while (str[i] && str[i] != ' ')
-	// 		{
-	//
-	// 		}
-	// 	}
-	// 	i++;
-	// }
-
-}
-
-int	ft_read_arg(int argc, char **argv, t_stack *stack)
-{
-	int	i;
-
-	i = 1;
-	if (argc == 1)
-	{
+		free(stack);
 		return (0);
 	}
-	if (!(stack->stack_a = ft_memalloc(sizeof(int) * (argc - 1))))
-		return (0);
-	if (!(stack->stack_b = ft_memalloc(sizeof(int) * (argc - 1))))
-		return (0);
 	stack->length = argc - 1;
 	stack->length_a = argc - 1;
 	stack->length_b = 0;
 	stack->instructions = NULL;
-	if (argc == 2)
-	{
-		if (ft_read_arg_bis(argv[1], stack) == 0)
-		{
-			return (0);
-		}
-	}
-	else
-	{
-		while (i < argc)
-		{
-			if (ft_check_arg(argv[i]) == 0)
-			{
-				return (0);
-			}
-			stack->stack_a[i - 1] = ft_atoi(argv[i]);
-			i++;
-		}
-	}
-	if (ft_check_duplication(stack) == 0)
-	{
-		return (0);
-	}
 	return (1);
 }

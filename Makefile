@@ -6,19 +6,19 @@
 #    By: tlenglin <tlenglin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/26 15:25:21 by tlenglin          #+#    #+#              #
-#    Updated: 2017/02/02 14:30:59 by tlenglin         ###   ########.fr        #
+#    Updated: 2017/02/09 15:49:50 by tlenglin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker
 
-SRC1 = main_checker.c ft_instructions.c ft_execution.c ft_check.c ft_optimization.c
-SRC2 = main_push_swap.c ft_parsing.c ft_algo_tools.c ft_algorithm3.c ft_optimization.c ft_algorithm2.c ft_algorithm1.c ft_instructions.c ft_execution.c ft_check.c
+SRC1 = main_checker.c ft_free.c ft_instructions.c ft_instructions_tools.c ft_execution.c ft_execution2.c ft_execution3.c ft_execution4.c ft_check.c ft_optimization.c ft_optimization2.c ft_read_arg.c
+SRC2 = main_push_swap.c ft_free.c ft_small_algo.c ft_read_arg.c ft_split_a.c ft_split_b.c ft_parsing.c ft_parsing2.c ft_parsing3.c ft_algo_tools.c ft_algorithm3.c ft_optimization.c ft_optimization2.c ft_algorithm1.c ft_instructions.c ft_instructions_tools.c ft_execution.c ft_execution2.c ft_execution3.c ft_execution4.c ft_check.c ft_get_value.c ft_loop.c ft_pull_up.c
 
 OBJ1 = $(SRC1:.c=.o)
 OBJ2 = $(SRC2:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 
 CC = gcc
 

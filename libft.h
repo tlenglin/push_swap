@@ -6,7 +6,7 @@
 /*   By: tlenglin <tlenglin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:00:34 by tlenglin          #+#    #+#             */
-/*   Updated: 2017/01/26 19:34:38 by tlenglin         ###   ########.fr       */
+/*   Updated: 2017/02/09 14:26:54 by tlenglin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct	s_line
 	char			*stock;
 }				t_line;
 
+int				ft_new_strsplit(char *s, char c, char ***split);
 int				get_next_line(const int fd, char **line);
 void			*ft_memset (void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
